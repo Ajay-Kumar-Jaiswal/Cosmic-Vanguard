@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Odyssey</title>
+    <link rel="stylesheet" href="space.css">
+</head>
+<body>
+    <div class="game-container">
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        
+        <div class="ui-overlay">
+            <div class="hud">
+                <div class="hud-left">
+                    <div class="hud-item">Score: <span id="score">0</span></div>
+                    <div class="hud-item">Level <span id="level">1</span></div>
+                    <div class="hud-item" id="comboHud" style="display: none;">
+                        Combo: <span id="combo">0</span>x
+                    </div>
+                </div>
+                <div class="hud-right">
+                    <div class="lives-display" id="livesDisplay"></div>
+                </div>
+            </div>
+            
+            <div class="power-status" id="powerStatus"></div>
+            
+            <div class="combo-display" id="comboDisplay">COMBO!</div>
+            
+            <div class="boss-warning" id="bossWarning">
+                ⚠️ BOSS INCOMING ⚠️
+                <div style="font-size: 16px; margin-top: 10px;">Prepare for Battle!</div>
+            </div>
+            
+            <div class="boss-health" id="bossHealth">
+                <div class="boss-health-text">BOSS</div>
+                <div class="boss-health-bar" id="bossHealthBar"></div>
+            </div>
+        </div>
+        
+        <div class="start-screen" id="startScreen">
+            <h1 class="game-title">COSMIC VANGUARD</h1>
+            <p class="game-subtitle">Premium Space Combat Experience</p>
+            
+            <div class="controls-grid">
+                <div class="control-item">
+                    <div class="control-key">WASD / ARROWS</div>
+                    <div class="control-desc">Move Ship</div>
+                </div>
+                <div class="control-item">
+                    <div class="control-key">SPACEBAR</div>
+                    <div class="control-desc">Fire Weapons</div>
+                </div>
+                <div class="control-item">
+                    <div class="control-key">⚡ POWER-UPS</div>
+                    <div class="control-desc">Shield, Rapid Fire, Triple Shot</div>
+                </div>
+                <div class="control-item">
+                    <div class="control-key">🎯 COMBOS</div>
+                    <div class="control-desc">Chain kills for bonus points</div>
+                </div>
+            </div>
+            
+            <button class="start-btn" onclick="startGame()">LAUNCH MISSION</button>
+            
+            <div class="tutorial-hint">
+                💡 Tip: Collect power-ups to survive boss battles!
+            </div>
+        </div>
+        
+        <div class="game-over" id="gameOver">
+            <h2>Mission Complete</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-label">Final Score</div>
+                    <div class="stat-value" id="finalScore">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Level Reached</div>
+                    <div class="stat-value" id="finalLevel">1</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Max Combo</div>
+                    <div class="stat-value" id="maxCombo">0</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Enemies Defeated</div>
+                    <div class="stat-value" id="enemiesKilled">0</div>
+                </div>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">RETRY MISSION</button>
+        </div>
+    </div>
+
+    <script src="space.js"></script>
+</body>
+</html>
